@@ -155,7 +155,7 @@ torch.setdefaulttensortype('torch.DoubleTensor')
 require('torch.Tensor')
 require('torch.File')
 require('torch.CmdLine')
-require('torch.FFI')
+require('torch.FFInterface')
 require('torch.Tester')
 require('torch.TestSuite')
 require('torch.test')
@@ -185,5 +185,8 @@ function torch.isStorage(obj)
 end
 -- alias for convenience
 torch.Tensor.isTensor = torch.isTensor
+
+-- remove this line to disable automatic heap-tracking for garbage collection
+torch.setheaptracking(true)
 
 return torch
